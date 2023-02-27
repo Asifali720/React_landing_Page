@@ -42,7 +42,7 @@ export default function TextForm(props) {
         setText(event.target.value)
     }
 
-    const wordLength = text.split(' ').length
+    const wordLength = text.split(/\s+/).length
 
 
 
