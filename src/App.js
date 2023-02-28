@@ -6,11 +6,7 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
 // import { Switch, Route } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 // const renderLink = path => <Link to={`/${path}`}>{path}</Link>;
 function App() {
@@ -61,21 +57,19 @@ function App() {
   }
   return (
     <>
-   <Router>
-        <Navbar title='UtilesText' about='About the App' mode={mode} toggleStyle={toggleStyle} btnText={btnText} />
-        <Alert alert={alert} />
-        {/* <Navbar/> */}
-        <div className="container my-3">
-          <Switch>
-            <Route exact path="/">
-              <TextForm heading='Type Text Here' mode={mode} showAlert={showAlert} />
-            </Route>
-             <Route path="/about">
-              <About mode={mode} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <Navbar title="UtilesText" about="About the App" mode={mode} toggleStyle={toggleStyle} btnText={btnText} />
+      <Alert alert={alert} />
+      {/* <Navbar/> */}
+      <div className="container my-3">
+        <Switch>
+          <Route exact path="/">
+            <TextForm heading="Type Text Here" mode={mode} showAlert={showAlert} />
+          </Route>
+          <Route path="/about">
+            <About mode={mode} />
+          </Route>
+        </Switch>
+      </div>
     </>
   );
 }
